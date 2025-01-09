@@ -1,0 +1,21 @@
+{
+	"name": "inngest-missing-cause-mre",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "pnpm run \"/dev-.*/\"",
+		"dev-wrangler": "wrangler dev --port 64000",
+		"dev-inngest": "inngest-cli dev --no-discovery -u http://localhost:64000/api/inngest -l error",
+		"reproduce": "curl http://localhost:64000"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250109.0",
+		"@types/node": "^22.10.5",
+		"inngest-cli": "^1.3.3",
+		"typescript": "^5.5.2",
+		"wrangler": "^3.60.3"
+	},
+	"dependencies": {
+		"inngest": "^3.29.0"
+	}
+}
